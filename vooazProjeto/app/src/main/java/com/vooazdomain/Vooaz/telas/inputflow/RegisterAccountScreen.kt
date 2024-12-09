@@ -65,7 +65,7 @@ fun RegisterAccountContent(navController: NavController, sharedModel: SharedMode
     var name = remember { mutableStateOf("") }
     var email = remember { mutableStateOf("") }
     var password = remember { mutableStateOf("") }
-    var desability = remember { mutableStateOf("Selecione seu debilidade") }
+    var desability = remember { mutableStateOf("Selecione sua deficiência") }
     var checked = remember { mutableStateOf(false) }
     var data = remember { mutableStateOf("") }
     var selectedGender = remember { mutableStateOf("Selecione seu gênero") }
