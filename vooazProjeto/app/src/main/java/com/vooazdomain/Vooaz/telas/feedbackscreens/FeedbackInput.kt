@@ -109,9 +109,9 @@ fun FeedbackScreen(navController: NavController) {
                 onValueChange = { feedbackText = it },
                 placeholder = { Text("Feedback...") },
                 modifier = Modifier
-                    .border(width = 2.dp, color = MaterialTheme.colorScheme.onSecondary, shape = RoundedCornerShape(size = 19.dp))
+                    .border(width = 2.dp, color = MaterialTheme.colorScheme.onSecondary, shape = RoundedCornerShape(size = 1.dp))
                 .width(370.dp)
-                .height(243.dp)
+                .heightIn(243.dp)
                 .background(color =MaterialTheme.colorScheme.surfaceContainerHigh, shape = RoundedCornerShape(size = 19.dp)),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
                     containerColor= MaterialTheme.colorScheme.onSecondaryContainer,
@@ -134,7 +134,7 @@ fun FeedbackScreen(navController: NavController) {
                     .shadow(elevation = 4.dp, spotColor = MaterialTheme.colorScheme.surfaceContainer, ambientColor = MaterialTheme.colorScheme.surfaceContainer)
                     .width(143.dp)
                     .height(39.dp)
-                    .background(color = MaterialTheme.colorScheme.onBackground, shape = RoundedCornerShape(size = 28.dp))
+                    .background(color = MaterialTheme.colorScheme.onBackground, shape = RoundedCornerShape(size = 28.dp)), colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.onBackground)
             ) {
                 Text(
                     text = stringResource(R.string.voltar,"Voltar"),

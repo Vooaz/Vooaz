@@ -7,12 +7,15 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonColors
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 
 @Composable
 fun SendMailButton(
@@ -36,9 +39,9 @@ fun SendMailButton(
             .background(
                 color = MaterialTheme.colorScheme.onBackground,
                 shape = RoundedCornerShape(size = 28.dp)
-            ),
+            ),colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.onBackground)
       ) {
-        Text("Enviar Email")
+        Text("Enviar Email", color = MaterialTheme.colorScheme.onSecondaryContainer, fontFamily = poppinsFontFamily, fontWeight = FontWeight.Bold)
     }
 }
 
