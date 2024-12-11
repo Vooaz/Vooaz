@@ -43,7 +43,7 @@ import com.vooazdomain.Vooaz.modelsData.datas.User
 fun GuideSearch(navController: NavController, shareModel: SharedModel) {
     var user  = shareModel.selectedUser
     var expanded = remember { mutableStateOf(false) }
-    var selectedGender = remember { mutableStateOf("Selecione seu gênero") }
+    var selectedGender = remember { mutableStateOf("Guias") }
     Scaffold(
 
         topBar = {
@@ -96,11 +96,8 @@ fun GuideSearch(navController: NavController, shareModel: SharedModel) {
 
                     guides.forEach { guide ->
                         when (selectedGender.value) {
-                            "Selecione seu gênero" -> {
-                                GuideCard(guide, shareModel, navController)
-                                Spacer (modifier = Modifier.height(12.dp))
-                            }
-                            "Outro" -> {
+
+                            "Guias" -> {
                                 GuideCard(guide,shareModel,  navController)
                                 Spacer (modifier = Modifier.height(12.dp))
                             }
@@ -147,7 +144,7 @@ fun HeaderGuidesFilter(primaryColor: Color, expanded:MutableState<Boolean>, sele
             expanded.value = !expanded.value
         }, contentAlignment = Alignment.Center) {
         Text(
-            text = stringResource(R.string.guias,"Guias"),
+            text = stringResource(R.string.guias,selectedGender.value),
             style = TextStyle(
                 fontFamily = poppinsFontFamily,
                 fontSize = 17.sp,
@@ -171,7 +168,7 @@ fun HeaderGuidesFilter(primaryColor: Color, expanded:MutableState<Boolean>, sele
                     shape = RoundedCornerShape(size = 15.dp)
                 )
         ) {
-            listOf("Masculino", "Feminino", "Outro").forEach { gender ->
+            listOf("Masculino", "Feminino", "Guias").forEach { gender ->
                 DropdownMenuItem(
                     text = { Text(gender) },
                     onClick = {
