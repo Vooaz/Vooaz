@@ -39,7 +39,7 @@ import com.vooazdomain.Vooaz.ui.theme.poppinsFontFamily
 fun ChatSearchConectsScreen(navController: NavController, shareModel:  SharedModel) {
 var user = shareModel.selectedUser
     val primaryColor = Color(0xFFFFC107) // Amarelo
-
+    var searchQuery = remember { mutableStateOf("") }
 
     Scaffold(
         bottomBar ={BottomNavigation(navController, user)},
@@ -73,7 +73,7 @@ var user = shareModel.selectedUser
                         ),
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(28.dp)
+
                 )
             }
             item {
@@ -81,14 +81,14 @@ var user = shareModel.selectedUser
             }
             // Campo de busca
             item {
-                SearchField()
+                SearchField(searchQuery)
             }
             item {
                 Spacer(modifier = Modifier.height(24.dp))
             }
             // Lista de destinos dinâmica
             item {
-                ConnectionsGrid(user, shareModel,primaryColor = primaryColor, navController)
+                ConnectionsGrid(searchQuery,user, shareModel,primaryColor = primaryColor, navController)
             }
             }
 
@@ -97,19 +97,21 @@ var user = shareModel.selectedUser
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SearchField() {
-    var searchQuery by remember { mutableStateOf("") }
+fun SearchField(searchQuery: MutableState<String>) {
+
 
     SearchBar(
         colors = SearchBarDefaults.colors(containerColor = Color(0xFF9AB8D2)),
-        query = "",
-        onQueryChange = {},
+        query = searchQuery.value,
+        onQueryChange = { query -> searchQuery.value = query},
         placeholder = {
-            Text("Pesquise destinos")
+            Text("Pesquise por nome..")
         },
         onSearch = {},
         active = false,
-        onActiveChange = {},
+        onActiveChange = {
+
+        },
         leadingIcon = {
             IconButton(onClick = {}) {
                 Icon(
@@ -130,15 +132,31 @@ fun SearchField() {
 }
 
 @Composable
-fun ConnectionsGrid(user: User?, shared:SharedModel, primaryColor: Color, controller: NavController) {
+fun ConnectionsGrid(query:MutableState<String>,user: User?, shared:SharedModel, primaryColor: Color, controller: NavController) {
     Column {
         user?.conected_users?.chunked(2)?.forEach { rowItems ->
             Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.spacedBy(16.dp)
+                modifier = Modifier.fillMaxWidth().padding(start = 12.dp),
+                horizontalArrangement = Arrangement.spacedBy(18.dp)
             ) {
                 rowItems.forEach { otherUsers ->
-                    ConnectionsCard(otherUsers = otherUsers,shared, primaryColor = primaryColor, controller = controller)
+                    if (query.value.isEmpty()) {
+
+                        ConnectionsCard(
+                            otherUsers = otherUsers,
+                            shared,
+                            primaryColor = primaryColor,
+                            controller = controller
+                        )
+                    } else {
+                        if (otherUsers?.name?.contains(query.value, ignoreCase = true)!!)
+                        ConnectionsCard(
+                            otherUsers = otherUsers,
+                            shared,
+                            primaryColor = primaryColor,
+                            controller = controller
+                        )
+                    }
                 }
             }
             Spacer(modifier = Modifier.height(16.dp))
@@ -150,7 +168,7 @@ fun ConnectionsGrid(user: User?, shared:SharedModel, primaryColor: Color, contro
 fun ConnectionsCard(otherUsers: User?,shared:SharedModel, primaryColor: Color, controller: NavController) {
     Column(
         modifier = Modifier
-            .width(158.dp).height(151.dp)
+            .width(160.dp).height(151.dp)
             .clip(RoundedCornerShape(12.dp))
             .background(primaryColor)
             .clickable {
@@ -194,7 +212,7 @@ fun ConnectionsCard(otherUsers: User?,shared:SharedModel, primaryColor: Color, c
             ),
                 modifier = Modifier
                     .width(192.dp)
-                    .height(14.dp)
+
 
         )
         Spacer(modifier = Modifier.height(4.dp))

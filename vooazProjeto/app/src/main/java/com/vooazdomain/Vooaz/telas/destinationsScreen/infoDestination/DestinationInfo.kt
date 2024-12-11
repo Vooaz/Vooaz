@@ -292,7 +292,7 @@ fun UserCommentItem(comment: Comments) {
                 Spacer(modifier = Modifier.width(4.dp))
                 Text(
                     text = comment.Rating.toString(),
-                    color =  MaterialTheme.colorScheme.tertiary
+                    color =  MaterialTheme.colorScheme.onSecondary
                 )
             }
             Spacer(modifier = Modifier.height(6.dp))

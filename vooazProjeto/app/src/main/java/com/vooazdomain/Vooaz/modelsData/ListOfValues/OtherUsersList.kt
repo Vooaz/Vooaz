@@ -58,7 +58,7 @@ fun getOthersUsersList(): MutableList<User?>{
             languages = listOf("Português", "Espanhol").toMutableList() ,
             email = "lucas.almeida@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Auditiva(o)",
             birthDate = Date(1988 - 1900, 11, 10), // 10 de Dezembro de 1988
             gender = "Masculino",
             userPlans = initialFlightPlan,
@@ -82,7 +82,7 @@ fun getOthersUsersList(): MutableList<User?>{
             languages = listOf("Português", "Inglês").toMutableList() ,
             email = "maria.oliveira@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Visual(o)",
             birthDate = Date(1995 - 1900, 7, 25), // 25 de Agosto de 1995
             gender = "Feminino",
             userPlans = initialFlightPlan,
@@ -105,7 +105,7 @@ fun getOthersUsersList(): MutableList<User?>{
             languages = listOf("Português", "Francês").toMutableList() ,
             email = "ana.souza@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Visual(o)",
             birthDate = Date(1992 - 1900, 9, 5), // 5 de Outubro de 1992
             gender = "Feminino",
             userPlans = initialFlightPlan,

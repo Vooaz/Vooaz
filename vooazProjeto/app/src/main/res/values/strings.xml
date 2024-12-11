@@ -127,7 +127,7 @@ Planos!</string>
     <string name="agenda">horários </string>
     <string name="avaliações">avaliações </string>
     <string name="roteiro">%s </string>
-    <string name="visita">realizar visita </string>
+    <string name="visita">%s </string>
     <string name="site">site </string>
     <string name="endereço">enderelo do local</string>
     <string name="comentário">Comentário do usuário </string>

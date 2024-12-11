@@ -54,7 +54,7 @@ return listOf<User>(
             languages = listOf("Português").toMutableList() ,
             email = "danilo.alcantara.2003y@email.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Auditiva(o)",
             birthDate = Date(1993 - 1900, 5, 15), // 15 de Junho de 1993
             gender = "Masculino",
             userPlans = initialFlightPlan,
@@ -80,7 +80,7 @@ return listOf<User>(
             languages = listOf("Português", "Inglês").toMutableList() ,
             email = "carlos.pereira@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Auditiva(o)",
             birthDate = Date(1996 - 1900, 2, 20), // 20 de Março de 1996
             gender = "Masculino",
             userPlans = initialFlightPlan,
@@ -104,7 +104,7 @@ return listOf<User>(
             languages = listOf("Português", "Espanhol").toMutableList() ,
             email = "lucas.almeida@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Auditiva(o)",
             birthDate = Date(1988 - 1900, 11, 10), // 10 de Dezembro de 1988
             gender = "Masculino",
             userPlans = initialFlightPlan,
@@ -129,7 +129,7 @@ return listOf<User>(
             languages = listOf("Português", "Inglês").toMutableList() ,
             email = "maria.oliveira@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Auditiva(o)",
             birthDate = Date(1995 - 1900, 7, 25), // 25 de Agosto de 1995
             gender = "Feminino",
             userPlans = initialFlightPlan,
@@ -153,7 +153,7 @@ return listOf<User>(
             languages = listOf("Português", "Francês").toMutableList() ,
             email = "ana.souza@gmail.com",
             password = "123456",
-            disabilityType = "Nenhuma",
+            disabilityType = "Auditiva(o)",
             birthDate = Date(1992 - 1900, 9, 5), // 5 de Outubro de 1992
             gender = "Feminino",
             userPlans = initialFlightPlan,

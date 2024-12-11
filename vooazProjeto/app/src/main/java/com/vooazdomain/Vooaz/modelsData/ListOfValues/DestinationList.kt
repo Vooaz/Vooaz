@@ -49,9 +49,9 @@ fun getDestinationList(): List<Destinations>{
         imageRes = R.drawable.ibirapuera,
         description = "Parque icônico com áreas para lazer, museus e eventos culturais.",
         userComments = listOf(
-            Comments( "Default", Comment = "Perfeito para relaxar!",  Rating = 5),
+            Comments( "Luiz", Comment = "Perfeito para relaxar!",  Rating = 5),
             Comments(
-                nome =  "Default",
+                nome =  "Cammila",
                 Comment = "Um dos meus lugares favoritos.",  Rating = 5
             )
         ),
